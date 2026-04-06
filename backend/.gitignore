@@ -1,0 +1,9 @@
+.env
+wardrobe.db
+uploads/originals/
+uploads/thumbnails/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/

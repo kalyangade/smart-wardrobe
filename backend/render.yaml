@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: smart-wardrobe-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false          # You enter this manually in Render dashboard
+      - key: CLAUDE_MODEL
+        value: claude-haiku-4-5-20251001
+      - key: UPLOAD_DIR
+        value: ./uploads
+      - key: MAX_IMAGE_SIZE_MB
+        value: "10"
+      - key: DUPLICATE_THRESHOLD
+        value: "3"
+      - key: BUDGET_WARNING_PERCENT
+        value: "0.8"
